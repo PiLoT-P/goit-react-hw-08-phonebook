@@ -1,0 +1,33 @@
+.list{
+    margin: 0;
+    padding: 0;
+
+    padding-top: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.link{
+    background-color: white;
+    color: rgba(244, 91, 105, 1);
+    font-style: 'Asap', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 10px 0;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.link:hover,
+.link:focus{
+    background-color: rgba(244, 91, 105, 1);
+    color: white;
+    border: 2px solid white;
+}
