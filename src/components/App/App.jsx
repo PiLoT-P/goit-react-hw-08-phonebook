@@ -1,19 +1,19 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import TodoPage from "../pages/TodoPage/TodoPage";
-import MainNavigate from "./Navigate/MainNavigate";
+import TodoPage from "../../pages/TodoPage/TodoPage";
+import MainNavigate from "../Navigate/MainNavigate";
 import LoginPage from "pages/LoginPage/LoginPage";
 import RegisterPage from "pages/RegisterPage/RegisterPage";
-
-const tr = false;
+import { useSelector } from "react-redux";
+import { selectorIsAuth } from "Redux/auth/authSelector";
 
 const PrivateRoute = ({ component, redirectTo = "/login" }) => {
-  const isAuth = tr;
+  const isAuth = useSelector(selectorIsAuth);
 
   return isAuth ? component : <Navigate to={redirectTo} />;
 };
 
 const PublicRoute = ({ component, redirectTo = "/todo" }) => {
-  const isAuth = tr;
+  const isAuth = useSelector(selectorIsAuth);
 
   return !isAuth ? component : <Navigate to={redirectTo} />;
 };
@@ -21,7 +21,7 @@ const PublicRoute = ({ component, redirectTo = "/todo" }) => {
 export const App = () => {
   return (
     <>
-      {!tr && <MainNavigate />}
+      {!useSelector(selectorIsAuth) && <MainNavigate />}
       <Routes>
         <Route path="/todo" element={ <PrivateRoute component={<TodoPage/>} />} />
         <Route path="/login" element={<PublicRoute component={<LoginPage/>} />} />

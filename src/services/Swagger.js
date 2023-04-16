@@ -25,11 +25,21 @@ export const removeContactsApi = (id) => {
 export const registerUserApi = (data) => {
     return axios
         .post('/users/signup', data)
-        .then(({ data }) => data);
+        .then(({ data: {token, user:{name, email}} }) => ({token, name, email}));
 }
 
 export const loginUserApi = (data) => {
     return axios
         .post('/users/login', data)
-        .then(({ data }) => data);
+        .then(({ data: {token, user:{name, email}} }) => ({token, name, email}));
+}
+
+export const logoutUserApi = (token) => {
+    return axios
+        .post('/users/logout', {
+            params: {
+              Authorization: token  
+            },
+        })
+        .then(({data}) => data)
 }

@@ -1,22 +1,28 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { loginUser, registerUser } from "./authOperation";
 
-const initianState = {
-    token: null,
-    isAuth: false,
-    email: null,
-    name: null,
-    password: null,
-    isLoading: false,
-    error: null,
-}
-
 const authSlice = createSlice({
     name: 'auth',
-    initianState,
+    initialState: {
+        token: null,
+        isAuth: false,
+        email: null,
+        name: null,
+        password: null,
+        isLoading: false,
+        error: null,
+    },
     reducers: {
         loguot() {
-            return initianState;
+            return {
+                token: null,
+                isAuth: false,
+                email: null,
+                name: null,
+                password: null,
+                isLoading: false,
+                error: null,
+            };
         },
     },
     extraReducers: (builder) =>{
@@ -63,4 +69,4 @@ const authSlice = createSlice({
 
 
 export const { loguot } = authSlice.actions;
-export default authSlice.reducer
+export default authSlice.reducer;

@@ -7,7 +7,7 @@ const LoginPage = () => {
     const dispath = useDispatch()
     const [form, setForm] = useState({
         email: '',
-        passowrd: '',
+        password: '',
     })
 
     const hendleChange = (e) => {
@@ -17,6 +17,7 @@ const LoginPage = () => {
 
     const hendleSubmit = (e) => {
         e.preventDefault();
+        console.log(form);
         dispath(loginUser(form));
     }
 
@@ -32,8 +33,8 @@ const LoginPage = () => {
                 <input
                     type="text"
                     name="password"
-                value={form.passowrd}
-                onChange={hendleChange}
+                    value={form.password}
+                    onChange={hendleChange}
                     placeholder="Password"
                 />
             <button type="submit">LogIn</button>
