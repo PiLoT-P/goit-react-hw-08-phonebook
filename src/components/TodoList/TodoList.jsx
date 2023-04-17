@@ -10,9 +10,9 @@ const TodoList = () => {
 
     return (
         <ul>
-            {filteredTodo.map(({id, name, phone }) => (
+            {filteredTodo.map(({id, name, number }) => (
                 <li key={id}>
-                    <p className={css.text}>{name}: {phone}</p>
+                    <p className={css.text}>{name}: {number}</p>
                     <button className={css.btn} onClick={(e) => dispatch(removeTodo(id))}>
                         Delete
                     </button>

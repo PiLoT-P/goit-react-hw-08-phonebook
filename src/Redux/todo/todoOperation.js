@@ -4,8 +4,9 @@ import { addContactsApi, getContactsApi, removeContactsApi } from '../../service
 export const addTodo = createAsyncThunk(
     'todo/add',
     async (newTodo, thunkApi) => {
+        const {token} = thunkApi.getState().auth;
         try {
-            const todo = await addContactsApi(newTodo);
+            const todo = await addContactsApi(newTodo, token);
             return todo;
         } catch (error) {
             return thunkApi.rejectWithValue(error.message);
@@ -16,8 +17,9 @@ export const addTodo = createAsyncThunk(
 export const getTodo = createAsyncThunk(
     'todo/get',
     async (_, thunkApi) => {
+        const {token} = thunkApi.getState().auth;
         try {
-            const data = await getContactsApi();
+            const data = await getContactsApi(token);
             return data;
         } catch (error) {
             return thunkApi.rejectWithValue(error.message);
@@ -36,8 +38,9 @@ export const getTodo = createAsyncThunk(
 export const removeTodo = createAsyncThunk(
     'todo/remove',
     async (id, thunkApi) => {
+        const {token} = thunkApi.getState().auth;
         try {
-            await removeContactsApi(id);
+            await removeContactsApi(id, token);
             return id;
         } catch (error) {
             return thunkApi.rejectWithValue(error.message);

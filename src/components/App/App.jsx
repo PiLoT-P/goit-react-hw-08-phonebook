@@ -21,7 +21,7 @@ const PublicRoute = ({ component, redirectTo = "/todo" }) => {
 export const App = () => {
   return (
     <>
-      {!useSelector(selectorIsAuth) && <MainNavigate />}
+      <MainNavigate />
       <Routes>
         <Route path="/todo" element={ <PrivateRoute component={<TodoPage/>} />} />
         <Route path="/login" element={<PublicRoute component={<LoginPage/>} />} />

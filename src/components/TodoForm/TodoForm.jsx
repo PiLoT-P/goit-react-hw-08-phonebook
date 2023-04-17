@@ -10,7 +10,7 @@ const TodoForm = () => {
     const todo = useSelector((state) => state.todo.contacts);
     
     const [name, setName] = useState('');
-    const [phone, setPhone] = useState('');
+    const [number, setNumber] = useState('');
 
     const hendleChangeName = (event) => {
         const { value } = event.target;
@@ -18,13 +18,13 @@ const TodoForm = () => {
     }
     const hendleChangeNumber = (event) => {
         const { value } = event.target;
-        setPhone(value);
+        setNumber(value);
     }
 
     const hendleSubmit = (event) => {
         event.preventDefault();
 
-        const newTodo = { name, phone };
+        const newTodo = { name, number };
         let k = 0;
 
         todo.map((el) => {
@@ -39,7 +39,7 @@ const TodoForm = () => {
         } else {
             dispatch(addTodo(newTodo));
             setName('');
-            setPhone('');
+            setNumber('');
         }
     }
 
@@ -66,7 +66,7 @@ const TodoForm = () => {
                     pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
                     title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                     required
-                    value={phone}
+                    value={number}
                     onChange={hendleChangeNumber}
                     />
                 </label>

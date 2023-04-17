@@ -2,22 +2,34 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
 
-export const addContactsApi = (todo) => {
+export const addContactsApi = (todo, token) => {
     return axios
-        .post('contacts', todo)
+        .post('contacts', todo, {
+            headers: {
+                Authorization: `${token}`
+            }
+        })
         .then(({ data }) => { return {...todo, id: data.id} });
 }
 
-export const getContactsApi = () => {
+export const getContactsApi = (token) => {
     return axios
-        .get('/contacts')
-        .then(({ data }) => console.log(data));
+        .get('/contacts', {
+            headers: {
+                Authorization: `${token}`
+            }
+        })
+        .then(({ data }) => data);
 }
 
 
-export const removeContactsApi = (id) => {
+export const removeContactsApi = (id, token) => {
     return axios
-        .delete(`contacts/${id}`)
+        .delete(`/contacts/${id}`, {
+            headers: {
+                Authorization: `${token}`
+            }
+        })
         .then(() => id);
 
 }
@@ -37,9 +49,9 @@ export const loginUserApi = (data) => {
 export const logoutUserApi = (token) => {
     return axios
         .post('/users/logout', {
-            params: {
-              Authorization: token  
-            },
+            headers: {
+                Authorization: `${token}`
+            }
         })
         .then(({data}) => data)
 }

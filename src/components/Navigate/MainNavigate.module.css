@@ -31,3 +31,41 @@
     color: white;
     border: 2px solid white;
 }
+
+.logout{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 20px;
+}
+
+.text{
+    background-color: white;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 0;
+    margin-top: 10px;
+    font-style: 'Asap', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.btn{
+    margin-top: 10px;
+    height: 39px;
+    width: 75px;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-style: 'Asap', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: rgba(244, 91, 105, 1);
+    color: white;
+    border: 2px solid white;
+}

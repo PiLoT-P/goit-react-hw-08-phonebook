@@ -1,4 +1,4 @@
-import { loginUserApi, registerUserApi } from '../../services/Swagger';
+import { loginUserApi, logoutUserApi, registerUserApi } from '../../services/Swagger';
 
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
@@ -25,3 +25,16 @@ export const loginUser = createAsyncThunk(
         }
     }
 );
+
+export const logoutUser = createAsyncThunk(
+    'auth/logout',
+    async (_, thunkApi) => {
+        const {token} = thunkApi.getState().auth;
+        try {
+            const userData = await logoutUserApi(token);
+            return userData;
+        } catch (error) {
+            return thunkApi.rejectWithValue(error.message);
+        }
+    }
+)
