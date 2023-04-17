@@ -9,7 +9,7 @@ const TodoList = () => {
     const filteredTodo = useSelector(selectorFilterTodo);
 
     return (
-        <ul>
+        <ul className={css.list}>
             {filteredTodo.map(({id, name, number }) => (
                 <li key={id}>
                     <p className={css.text}>{name}: {number}</p>

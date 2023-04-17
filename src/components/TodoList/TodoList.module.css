@@ -1,8 +1,32 @@
 .text{
     display: inline-block;
     margin-right: 20px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .btn{
+    height: 30px;
     cursor: pointer;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-style: 'Asap', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: rgba(244, 91, 105, 1);
+    color: white;
+    border: 2px solid white;
+}
+
+.list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }

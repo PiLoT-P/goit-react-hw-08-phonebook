@@ -1,12 +1,27 @@
 .btn{
+    height: 30px;
     display: block;
     margin-top: 20px;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-style: 'Asap', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
     cursor: pointer;
 }
 
+.btn:hover,
+.btn:focus {
+    background-color: rgba(244, 91, 105, 1);
+    color: white;
+    border: 2px solid white;
+}
+
 .form{
-    border: 2px solid black;
+    border: 2px solid white;
     width: 350px;
     padding-left: 10px;
     padding-bottom: 10px;
+    background-color: rgb(255, 136, 146);
 }

@@ -47,11 +47,15 @@ export const loginUserApi = (data) => {
 }
 
 export const logoutUserApi = (token) => {
+    // axios.defaults.headers.common.Authorization = `Bearer ${token}`
     return axios
-        .post('/users/logout', {
+        .post('/users/logout', null, {
             headers: {
-                Authorization: `${token}`
+                Authorization: `Bearer ${token}`
             }
         })
-        .then(({data}) => data)
+        .then(({ data }) => {
+            // axios.defaults.headers.common.Authorization = ``
+            return data;
+        })
 }

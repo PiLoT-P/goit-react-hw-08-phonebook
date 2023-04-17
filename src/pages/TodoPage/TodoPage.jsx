@@ -16,11 +16,13 @@ const TodoPage = () => {
 
     return (
         <div className={css.main}>
-            <h1>Phonebook</h1>
-            <TodoForm/>
-            <h2>Contacts</h2>
-            <TodoFilter/>
-            <TodoList/>
+            <div className={css.two}>
+                <h1 className={css.text}>Phonebook</h1>
+                <TodoForm/>
+                <h2 className={css.text}>Contacts</h2>
+                <TodoFilter/>
+                <TodoList/>
+            </div>
         </div>
     );
 }
