@@ -39,7 +39,7 @@ const RegisterPage = () => {
                 onChange={hendleChange}
             />
             <input
-                type="text"
+                type="password"
                 name="password"
                 placeholder="Password"
                 value={form.password}

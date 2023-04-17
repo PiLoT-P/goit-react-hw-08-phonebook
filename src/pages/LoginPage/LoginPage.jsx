@@ -31,7 +31,7 @@ const LoginPage = () => {
                     placeholder="UserEmail"
                 />
                 <input
-                    type="text"
+                    type="password"
                     name="password"
                     value={form.password}
                     onChange={hendleChange}
