@@ -14,8 +14,8 @@ const MainNavigate = () => {
         <>
             <nav>
                 {!isAuth ? <ul className={css.list}>
-                    <NavLink className={css.link} to='/login'>LogIn</NavLink>
-                    <NavLink className={css.link} to='/register'>Register</NavLink>
+                    <NavLink className={css.link} to='goit-react-hw-08-phonebook/login'>LogIn</NavLink>
+                    <NavLink className={css.link} to='goit-react-hw-08-phonebook/register'>Register</NavLink>
                 </ul> : 
                     <div className={css.logout}>
                         <p className={css.text}>{userName}</p>

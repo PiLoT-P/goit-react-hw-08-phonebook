@@ -23,10 +23,10 @@ export const App = () => {
     <>
       <MainNavigate />
       <Routes>
-        <Route path="/todo" element={ <PrivateRoute component={<TodoPage/>} />} />
-        <Route path="/login" element={<PublicRoute component={<LoginPage/>} />} />
-        <Route path="/register" element={<PublicRoute component={<RegisterPage/>} />} />
-        <Route path="*" element={<Navigate to="/todo" />} />
+        <Route path="goit-react-hw-08-phonebook/todo" element={ <PrivateRoute component={<TodoPage/>} />} />
+        <Route path="goit-react-hw-08-phonebook/login" element={<PublicRoute component={<LoginPage/>} />} />
+        <Route path="goit-react-hw-08-phonebook/register" element={<PublicRoute component={<RegisterPage/>} />} />
+        <Route path="*" element={<Navigate to="goit-react-hw-08-phonebook/todo" />} />
       </Routes>
     </>
   );
